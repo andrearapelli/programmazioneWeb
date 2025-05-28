@@ -1,0 +1,391 @@
+/* Reset di base per margini, padding e box-sizing */
+body,
+html {
+    font-family: "Rubik", sans-serif;
+    line-height: 1;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* tutti gli elementi nel box-sizing */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* Reset per titoli, paragrafi e liste */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0 0 1rem;
+    padding: 0;
+}
+
+ol,
+ul {
+    padding-left: 20px;
+    line-height: 1.5;
+}
+
+/* per mantenere le proporzioni delle immagini */
+img {
+    height: auto;
+}
+
+/* stile per i titoli */
+h1 { font-size: 4rem; color: white }
+h2 { font-size: 3rem; color: white }
+h3 { font-size: 2rem; color: white }
+h4 { font-size: 1rem; color: white }
+
+/* stile per i titoli per i link */
+a {
+    text-decoration: none;
+    color: white
+}
+
+/* stile per i titoli per i Paragrafi  */
+p {
+    font-size: 18px;
+    line-height: 1.4;
+    color: white
+}
+
+/* Sfondo nero  */
+body {
+    background: black;
+}
+
+.container {
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10% 30px 10%;
+}
+
+/* Logo  */
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+/* stile per Immagine di contatto */
+.contattiimg {
+    width: 500px;
+    height: auto;
+}
+
+/* Menu */
+.menu ul {
+    padding: 0;
+    margin: 0;
+}
+.menu li {
+    display: inline-block;
+}
+.menu a {
+    padding: 15px 20px;
+    display: block;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Menu hamburger nascosto di default */
+.hamburger {
+    display: none;
+}
+
+/* stile Form contatto */
+form {
+    color: white;
+    max-width: 500px;
+    padding: 20px;
+}
+form label {
+    display: block;
+    margin-bottom: 6px;
+}
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    background-color: #2b2929;
+    color: white;
+}
+form input[type="submit"] {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+}
+form input[type="submit"]:hover {
+    background-color: #c2185b;
+}
+
+/* responsive per header, menu e form */
+@media (max-width: 768px) {
+    .header {
+        padding-left: 20px;
+        padding-right: 60px;
+        position: relative;
+        width: 100%;
+        background: black;
+    }
+
+    /* Menu a scomparsa per mobile */
+    .menu {
+        position: absolute;
+        top: 105px;
+        left: 0;
+        width: 100%;
+        height: 16vh;
+        background-color: rgb(255, 255, 255);
+        transform: translateX(-100%);
+        transition: transform 0.5s linear;
+    }
+
+    .menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu a {
+        color: black;
+    }
+
+    /* Quando il menu è aperto, viene visualizzato */
+    .open .menu {
+        transform: translateX(0);
+    }
+
+    .spacer {
+        display: none;
+    }
+
+    /* hamburger menu quando visibile*/
+    .hamburger {
+        display: block;
+        height: 25px;
+        width: 30px;
+        position: absolute;
+        top: 40px;
+        right: 15px;
+    }
+
+    .hamburger span {
+        display: block;
+        top: 8px;
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background-color: white;
+    }
+
+    .hamburger span:nth-child(1) {
+        margin-top: -6px;
+    }
+
+    .hamburger span:nth-child(2) {
+        margin-top: 6px;
+    }
+
+    /* Form adattato */
+    form {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    form input[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+}
+
+/* Stile per i bottoni */
+.button {
+    background-color: transparent;
+    border: 1px solid white;
+    display: inline-block;
+    padding: 15px 20px;
+    color: white;
+}
+
+/* Sezione hero con immagine e testo */
+.hero {
+    display: flex;
+    padding: 5% 10%;
+}
+.hero__text {
+    width: 60%;
+    padding: 7% 30px;
+}
+.hero__img {
+    width: 40%;
+}
+
+/* Hero responsive */
+@media (max-width: 768px) {
+    .hero {
+        flex-wrap: wrap;
+        padding: 20% 10% 0 10%;
+    }
+
+    .hero__text,
+    .hero__img {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+}
+
+/* Cover con effetto bianco e nero */
+.cover {
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../../cover.jpg) no-repeat center center;
+    background-size: cover;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+
+.cover:hover {
+    filter: grayscale(0%);
+}
+
+/* Testo sopra la cover */
+.cover__text {
+    text-align: center;
+    max-width: 1000px;
+    color: white;
+}
+
+/* Cover per pagina servizi */
+.coverService {
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/services.jpg) no-repeat center center;
+    background-size: cover;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+
+/* Card con testo in sovrapposizione che appare al passaggio */
+.card {
+    display: block;
+    width: 100%;
+    padding: 0 0;
+    position: relative;
+}
+.card__text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: white;
+    color: black;
+    padding: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1.0s ease;
+}
+.card__text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer */
+.footer {
+    background: white;
+}
+.footer h4 {
+    color: black;
+}
+.footer p {
+    color: black;
+}
+
+/* Utilità varie per immagini, padding, griglie */
+.img-res {
+    height: auto;
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.pt-1 { padding-top: 10px; }
+.pt-2 { padding-top: 30px; }
+.pt-3 { padding-top: 60px; }
+
+.pb-1 { padding-bottom: 10px; }
+.pb-2 { padding-bottom: 30px; }
+.pb-3 { padding-bottom: 60px; }
+
+.grid {
+    display: flex;
+    padding: 0 10%;
+    flex-wrap: wrap;
+}
+
+.col-25 { width: 25%; padding: 5% 20px; }
+.col-50 { width: 50%; padding: 5% 20px; }
+.col-40 { width: 40%; padding: 10% 20px; }
+.col-60 { width: 60%; padding: 10% 20px; }
+.col-33 { width: 33.33%; padding: 2% 50px; }
+.col-100 { width: 100%; padding: 7% 20px; }
+
+/* colonne al massimo quando responsive */
+@media (max-width: 768px) {
+    .col-50,
+    .col-40,
+    .col-60,
+    .col-33,
+    .col-100 {
+        width: 100%;
+    }
+
+    .reverse {
+        flex-direction: column-reverse;
+    }
+
+    .contact-button {
+        display: none;
+    }
+
+    .hero {
+        display: flex;
+        padding: 5%;
+    }
+}
