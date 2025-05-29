@@ -140,7 +140,7 @@ form input[type="submit"]:hover {
     background-color: #c2185b;
 }
 
-/* responsive per header, menu e form */
+/* responsive Tablet per header, menu e form */
 @media (max-width: 768px) {
     .header {
         padding-left: 20px;
@@ -368,6 +368,127 @@ form input[type="submit"]:hover {
 
 /* colonne al massimo quando responsive */
 @media (max-width: 768px) {
+    .col-50,
+    .col-40,
+    .col-60,
+    .col-33,
+    .col-100 {
+        width: 100%;
+    }
+
+    .reverse {
+        flex-direction: column-reverse;
+    }
+
+    .contact-button {
+        display: none;
+    }
+
+    .hero {
+        display: flex;
+        padding: 5%;
+    }
+}
+
+/* responsive Smartphopne per header, menu e form */
+@media (max-width: 450px) {
+    .header {
+        padding-left: 20px;
+        padding-right: 60px;
+        position: relative;
+        width: 100%;
+        background: black;
+    }
+
+    /* Menu a scomparsa per mobile */
+    .menu {
+        position: absolute;
+        top: 105px;
+        left: 0;
+        width: 100%;
+        height: 16vh;
+        background-color: rgb(255, 255, 255);
+        transform: translateX(-100%);
+        transition: transform 0.5s linear;
+    }
+
+    .menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu a {
+        color: black;
+    }
+
+    /* Quando il menu è aperto, viene visualizzato */
+    .open .menu {
+        transform: translateX(0);
+    }
+
+    .spacer {
+        display: none;
+    }
+
+    /* hamburger menu quando visibile*/
+    .hamburger {
+        display: block;
+        height: 25px;
+        width: 30px;
+        position: absolute;
+        top: 40px;
+        right: 15px;
+    }
+
+    .hamburger span {
+        display: block;
+        top: 8px;
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background-color: white;
+    }
+
+    .hamburger span:nth-child(1) {
+        margin-top: -6px;
+    }
+
+    .hamburger span:nth-child(2) {
+        margin-top: 6px;
+    }
+
+    /* Form adattato */
+    form {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    form input[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    /* Hero responsive */
+    .hero {
+        flex-wrap: wrap;
+        padding: 20% 10% 0 10%;
+    }
+
+    .hero__text,
+    .hero__img {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
     .col-50,
     .col-40,
     .col-60,
